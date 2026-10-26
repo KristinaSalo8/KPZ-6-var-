@@ -3,8 +3,6 @@ package restaurant.infrastructure;
 import restaurant.application.NotificationService;
 import restaurant.application.ReservationRepository;
 import restaurant.domain.TableReservation;
-
-/** Decorator (Indirection): після збереження надсилає сповіщення, контролер про це не знає. */
 public class NotifyingReservationRepository implements ReservationRepository {
     private final ReservationRepository inner;
     private final NotificationService notifier;

@@ -1,8 +1,6 @@
 package restaurant.infrastructure;
 
 import restaurant.application.NotificationService;
-
-/** Імітація SMS-шлюзу. */
 public class SmsNotificationService implements NotificationService {
     @Override
     public void send(String phone, String message) {

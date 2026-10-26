@@ -1,14 +1,16 @@
 package restaurant.domain;
-import java.util.List;
 
+import java.util.List;
 public final class TableReservation {
     private static final int LARGE_GROUP_FROM = 5;
     private static final double SERVICE_RATE = 0.10;
+
     private final int id;
     private final Guest guest;
     private final int guestsCount;
     private final TimeSlotPolicy timeSlot;
     private final List<OrderLine> preOrder;
+
     private TableReservation(int id, Guest guest, int guestsCount,
                              TimeSlotPolicy timeSlot, List<OrderLine> preOrder) {
         this.id = id;

@@ -1,5 +1,4 @@
 package restaurant.domain;
-
 public record Guest(int id, String name, String phone) {
     public Guest {
         if (name == null || name.isBlank()) {
