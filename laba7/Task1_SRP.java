@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 // Автоматизована система міської бібліотеки
-// (SRP): God Object LibraryLoanService розділено на окремі відповідальності
+// (SRP): клас повинен мати лише одну причину зміни
 public class Task1_SRP {
     // ! Dont Repeat Yourself (DRY): формати дат - константи, а не створюються щоразу заново
     static final DateTimeFormatter UI_DATE = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -111,7 +111,7 @@ public class Task1_SRP {
             this.repository = repository;
             this.notifier = notifier;
         }
-        //Доменна модель - збереження даних про повернення книги
+        //Викликає їх у метод processBookReturn
         void processBookReturn(BookReturnModel loan) {
             validator.validate(loan);
             ReturnResult result = calculator.calculate(loan);

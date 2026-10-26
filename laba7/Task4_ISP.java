@@ -1,11 +1,11 @@
 import java.math.BigDecimal;
-
+//ISP(Interface Segregation Principle) - клієнти не залежать від інтерфейсів які не використовують.
 public class Task4_ISP {
     interface CardPayment { void processCreditCard(BigDecimal amount, String cardNumber); }
     interface NfcPayment { void processNfcTap(BigDecimal amount); }
     interface BankTransferPayment { void processBankTransfer(BigDecimal amount, String iban); }
-    interface GiftCardPayment { void processGiftCard(BigDecimal amount, String voucherCode); }
     interface ReceiptPrinter { void printPaperReceipt(String text); }
+
     static class OnlineWebCheckoutTerminal implements CardPayment, BankTransferPayment {
         public void processCreditCard(BigDecimal amount, String cardNumber) {
             System.out.println("Web charged " + amount + " via card.");
@@ -25,6 +25,7 @@ public class Task4_ISP {
             System.out.println("Printed receipt: " + text);
         }
     }
+    //Два термінали зі своїми спеціалізованими класами
     static class CheckoutService {
         void payByCard(CardPayment terminal, BigDecimal amount, String card) {
             terminal.processCreditCard(amount, card);
