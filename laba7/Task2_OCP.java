@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 // Страхова компанія, актуарні розрахунки
-// (OCP): if-else за типом полісу замінено на Strategy
+// (OCP): програмні сутності відкриті до розширення, але закриті для модифікації
+// поліморфізм і патерн Strategy
+
 // Extension Point: інтерфейс PremiumStrategy
 public class Task2_OCP {
 

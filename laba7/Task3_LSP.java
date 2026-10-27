@@ -1,5 +1,5 @@
 // Управління транспортним парком
-// (LSP): ElectricVehicle більше не успадковує refuel(), який вона не може виконати
+// (LSP): об'єкти нащадків не порушують роботу програми з базового класу
 // Ієрархію розділено на ролі: Vehicle (їздити) + Refuelable (паливо) / Chargeable (батарея)
 public class Task3_LSP {
     // Базовий контракт: те, що вміють ВСІ транспортні засоби
@@ -31,7 +31,7 @@ public class Task3_LSP {
         private final double tankCapacity;
         private double fuelLevel;
 
-        FuelVehicle(String plate, double fuelLevel, double tankCapacity) {
+        FuelVehicle(String plate, double fuelLevel, double tankCapacity) { // Guard Clauses раннє виявлення помилок
             super(plate);
             if (tankCapacity <= 0 || fuelLevel < 0 || fuelLevel > tankCapacity)
                 throw new IllegalArgumentException("Некоректні параметри бака");
@@ -63,7 +63,7 @@ public class Task3_LSP {
         private final double batteryCapacity;
         private double batteryLevel;
 
-        ElectricVehicle(String plate, double batteryLevel, double batteryCapacity) {
+        ElectricVehicle(String plate, double batteryLevel, double batteryCapacity) { // Guard Clauses
             super(plate);
             if (batteryCapacity <= 0 || batteryLevel < 0 || batteryLevel > batteryCapacity)
                 throw new IllegalArgumentException("Некоректні параметри батареї");
@@ -88,7 +88,7 @@ public class Task3_LSP {
             System.out.println(getLicensePlate() + " проїхав " + distanceKm + " км. Заряд: " + batteryLevel);
         }
     }
-    // Клієнти залежать лише від потрібної ролі
+    // Менеджер залежать лише від потрібної ролі
     static class GasStationManager {
         void refuelToFull(Refuelable vehicle) {
             double needed = vehicle.getTankCapacityLiters() - vehicle.getFuelLevelLiters();

@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+//DIP(Dependency Inversion Principle) - модулі високого рівня не залежать від низького рівня
 public class Task5_DIP {
     record Document(String documentId, String title, String authorUsername, String approverUsername) { }
     interface DocumentSearchIndex { void indexDocument(String docId, String title, String status); }
     interface ApproverValidator { boolean validateUserSignature(String username); }
     interface ChatNotifier { void postChannelMessage(String channel, String message); }
+    // Production реалізація
     static class ElasticsearchDocumentIndex implements DocumentSearchIndex {
         public void indexDocument(String docId, String title, String status) {
             System.out.println("[Elasticsearch] Документ " + docId + " ('" + title + "') -> статус '" + status + "'.");
@@ -22,6 +24,7 @@ public class Task5_DIP {
             System.out.println("[Slack] #" + channel + ": " + message);
         }
     }
+        // Тестова реалізація
     static class InMemoryIndex implements DocumentSearchIndex {
         final List<String> records = new ArrayList<>();
         public void indexDocument(String docId, String title, String status) { records.add(docId + ":" + status); }
@@ -39,6 +42,7 @@ public class Task5_DIP {
         private final DocumentSearchIndex searchIndex;
         private final ApproverValidator validator;
         private final ChatNotifier notifier;
+        //Конструктор перевірки
         DocumentApprovalWorkflow(DocumentSearchIndex searchIndex, ApproverValidator validator, ChatNotifier notifier) {
             this.searchIndex = Objects.requireNonNull(searchIndex);
             this.validator = Objects.requireNonNull(validator);
