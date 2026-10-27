@@ -1,6 +1,6 @@
 package restaurant.domain;
 
-/** Protected Variations: стабільний контракт для змінної цінової політики часу візиту. */
+/** Protected Variations: захищає код від змін вимог */
 public interface TimeSlotPolicy {
     double applyDiscount(double amount);
 }
