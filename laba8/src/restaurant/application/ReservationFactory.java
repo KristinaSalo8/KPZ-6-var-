@@ -1,17 +1,14 @@
 package restaurant.application;
-
 import restaurant.domain.Guest;
 import restaurant.domain.MenuItem;
 import restaurant.domain.OrderLine;
 import restaurant.domain.TableReservation;
 import restaurant.domain.TimeSlot;
-
 import java.util.List;
-
+//Creator - Клас, який створює об'єкти іншого класу, повинен бути відповідальним за створення цих об'єктів.
 public class ReservationFactory {
     private static final String DEMO_PHONE = "+380631234567";
     private int nextId = 404;
-
     public TableReservation create(ReservationRequest request) {
         Guest guest = new Guest(3, request.guestName(), DEMO_PHONE);
         List<OrderLine> preOrder = List.of(
