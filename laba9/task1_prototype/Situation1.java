@@ -11,12 +11,12 @@ public class Situation1 {
             pack.add(reference.copy());
         }
         Logger.log("Spawn", "На локації «Чорний ліс» з'явилося 5 вовків (без повторного завантаження)");
-        // Змінюємо одну копію - еталон і інші не повинні постраждати
+        // Змінюємо одну копію - еталон і інші не повинні постраждати.
         Monster leader = pack.get(0);
-        leader.weapon.name = "Кігті ватажка";
-        leader.weapon.damage = 25;
-        leader.level = 10;
-        leader.skills.add("Виття");
+        leader.setLevel(10);
+        leader.getWeapon().setName("Кігті ватажка");
+        leader.getWeapon().setDamage(25);
+        leader.getSkills().add("Виття");
         Logger.log("Spawn", "Вовк №1 став ватажком");
         System.out.println("Еталон:           " + reference);
         System.out.println("Ватажок:          " + leader);
