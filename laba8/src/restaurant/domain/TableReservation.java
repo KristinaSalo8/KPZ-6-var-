@@ -1,5 +1,5 @@
 package restaurant.domain;
-//(Rich Domain Model) - Об'єкт, який володіє даними, повинен виконувати операції над цими даними.
+//(Rich Domain Model) - сутності самі знають, як рахувати свої дані й захищають свій стан.
 import java.util.List;
 public final class TableReservation {
     private static final int LARGE_GROUP_FROM = 5;

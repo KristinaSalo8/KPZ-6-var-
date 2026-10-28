@@ -2,7 +2,7 @@
 
 ## CBO - кількість інших класів проєкту, з якими пов'язаний даний клас
 
-| Клас | До рефакторингу | Після | Зв'язки "після" |
+| Клас | До змін | Після | Зв'язки "після" |
 | `LegacyRestaurantProcessor` → `ReservationController` | 5 | **4** | `ReservationFactory`, `ReservationRepository`, `ReservationRequest`, `TableReservation` |
 | `TableReservation` | 4 (`Guest`, `OrderLine`, `List`, `ArrayList`) | **4** | `Guest`, `OrderLine`, `TimeSlotPolicy`, `List` |
 | `OrderLine` | 1 (`MenuItem`) | **1** | `MenuItem` |
@@ -23,5 +23,5 @@ Legacy-процесор: `Scanner`, `Guest`, `TableReservation`, `MenuItem`, `Or
 | `FileReservationRepository` | — | **1** | один метод `save` |
 | `ReservationReceiptFormatter` | — | **1** | один метод `format` |
 
-**Висновок:**  усі розроблені класи мають ідеальну згуртованість (LCOM4 = 1), оскільки кожен із них виконує чітко одну обов'язок за патерном Single Responsibility. Можуть бути ситуація коли днеілька методів викликають один одного і працюють над спільною метою -тоді вони утворюють й зв'язну компоненту
+**Висновок:**  усі розроблені класи мають ідеальну згуртованість (LCOM4 = 1), оскільки кожен із них виконує чітко один обов'язок за патерном Single Responsibility. Може бути ситуація коли декілька методів викликають один одного і працюють над спільною метою - тоді вони утворюють зв'язну компоненту.
 
