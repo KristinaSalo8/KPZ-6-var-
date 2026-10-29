@@ -1,0 +1,60 @@
+@startuml task3_object_pool
+title Завдання 3. Розподіл арен для матчів: шаблон Object Pool
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam nodesep 190
+skinparam ranksep 80
+skinparam defaultFontSize 14
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+  ArrowColor #333333
+}
+hide empty members
+skinparam StereotypeFontSize 13
+
+class Situation3 <<Client>> {
+  + {static} run() : void
+}
+
+class ArenaPool <<ObjectPool>> {
+  - free : Queue<Arena>
+  - waiting : Queue<String>
+  - all : List<Arena>
+  + ArenaPool(size : int)
+  + acquire(match : String) : Arena
+  + release(arena : Arena) : void
+  + printStats() : void
+}
+
+class Arena <<Reusable>> {
+  ~ id : String
+  ~ match : String
+  ~ scoreA : int
+  ~ scoreB : int
+  ~ timer : int
+  ~ players : List<String>
+  ~ items : List<String>
+  ~ matchesPlayed : int
+  + Arena(id : String)
+  ~ start(match : String) : void
+  ~ reset() : void
+  + toString() : String
+}
+
+Situation3 -right-> ArenaPool : <<acquire / release>>
+Situation3 -down-> Arena : <<use>>
+ArenaPool "1" *-down-- "1..*" Arena : all
+ArenaPool "1" o-down-- "0..*" Arena : free
+
+note left of ArenaPool
+  waiting - черга матчів (FIFO).
+  release(): reset() арени, потім
+  одразу видача першому з черги.
+end note
+note left of Arena
+  reset(): очищає гравців, рахунок,
+  таймер і предмети.
+end note
+@enduml

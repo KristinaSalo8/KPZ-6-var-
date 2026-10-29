@@ -2,7 +2,7 @@ package task1_prototype;
 import common.Logger;
 import java.util.ArrayList;
 import java.util.List;
-// ConcretePrototype
+// ConcretePrototype - клас еталонної моделі, який надає метод для клонування самого себе
 
 public class Monster implements Prototype<Monster> {
     private String species;

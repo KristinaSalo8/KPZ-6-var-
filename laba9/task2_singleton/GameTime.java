@@ -7,7 +7,7 @@ public class GameTime { //ігровий час світу
     private static GameTime instance;
     private int hour = 12;
 
-    private GameTime() { // приватний конструктор - створити в обхід неможливо
+    private GameTime() { 
         Logger.log("GameTime", "Ігровий час світу ініціалізовано");
     }
 

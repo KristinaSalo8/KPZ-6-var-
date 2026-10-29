@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Situation3 {
     public static void run() {
-        ArenaPool pool = new ArenaPool(5);
+        ArenaPool pool = new ArenaPool(3);
 
         String[] matches = {"Вовки vs Ворони", "Гусі vs Орли", "Тигри vs Яструби",
                 "Ведмеді vs Лиси", "Круки vs Сови"};

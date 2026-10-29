@@ -1,0 +1,55 @@
+@startuml task1_prototype
+title Завдання 1. Спавн монстрів: шаблон Prototype
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam nodesep 70
+skinparam ranksep 80
+skinparam defaultFontSize 14
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+  ArrowColor #333333
+}
+hide empty members
+skinparam StereotypeFontSize 13
+
+interface "Prototype<T>" as Prototype <<Prototype>> {
+  + copy() : T
+}
+
+class Monster <<ConcretePrototype>> {
+  ~ species : String
+  ~ level : int
+  ~ weapon : Weapon
+  ~ skills : List<String>
+  ~ loot : List<String>
+  + Monster(species, level, weapon, skills, loot)
+  - Monster(other : Monster)
+  + copy() : Monster
+  + toString() : String
+}
+
+class Weapon <<Deep-copied component>> {
+  ~ name : String
+  ~ damage : int
+  + Weapon(name, damage)
+  + Weapon(other : Weapon)
+  + toString() : String
+}
+
+class Situation1 <<Client>> {
+  + {static} run() : void
+}
+
+Situation1 -down-> Monster : <<create, copy()>>
+Situation1 -right-> Weapon : <<create>>
+Monster .left.|> Prototype
+Monster "1" *-right- "1" Weapon : weapon
+
+note bottom of Monster
+  Дорогий конструктор завантажує модель, анімації й характеристики.
+  Приватний копіювальний конструктор копіює все без завантаження:
+  skills і loot - нові списки, weapon - нова Weapon (глибока копія).
+end note
+@enduml

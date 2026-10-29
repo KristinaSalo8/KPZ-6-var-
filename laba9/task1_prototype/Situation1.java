@@ -17,7 +17,7 @@ public class Situation1 {
         leader.getWeapon().setName("Кігті ватажка");
         leader.getWeapon().setDamage(25);
         leader.getSkills().add("Виття");
-        Logger.log("Spawn", "Вовк №1 став ватажком");
+        Logger.log("Spawn", "Вовк(Вітя) №1 став ватажком");
         System.out.println("Еталон:           " + reference);
         System.out.println("Ватажок:          " + leader);
         System.out.println("Звичайний вовк:   " + pack.get(1));

@@ -1,0 +1,47 @@
+@startuml task2_singleton
+title Завдання 2. Ігровий час світу: шаблон Singleton
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam nodesep 70
+skinparam ranksep 80
+skinparam defaultFontSize 14
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+  ArrowColor #333333
+}
+hide empty members
+skinparam StereotypeFontSize 13
+
+class GameTime <<Singleton>> {
+  - {static} instance : GameTime
+  - hour : int
+  - GameTime()
+  + {static} getInstance() : GameTime
+  + setHour(hour : int) : void
+  + getHour() : int
+  + isNight() : boolean
+  + getId() : String
+}
+
+class Situation2 <<Client>> {
+  + {static} run() : void
+}
+
+Situation2 -down--> GameTime : <<getInstance()>>
+
+note right of GameTime
+  Поле instance (static, private) тримає єдиний екземпляр.
+  Приватний конструктор: створити другий ігровий час
+  в обхід getInstance() неможливо.
+  getInstance() - synchronized, створює екземпляр
+  при першому виклику.
+end note
+
+note left of Situation2
+  Підсистеми погоди, спавну, торгівлі й квестів
+  отримують час через getInstance()
+  і бачать один і той самий об'єкт.
+end note
+@enduml

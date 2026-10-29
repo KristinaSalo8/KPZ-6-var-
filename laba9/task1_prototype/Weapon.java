@@ -7,6 +7,7 @@ public class Weapon {
     private int damage;
     public Weapon(String name, int damage) { this.name = name; this.damage = damage; }
     public Weapon(Weapon other) { this(other.name, other.damage); }
+    
     @Override public String toString() { return name + "(" + damage + ")"; }
     public void setName(String name) {
         this.name = name;
