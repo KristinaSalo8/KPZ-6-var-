@@ -1,12 +1,11 @@
 package restaurant.ui;
-
 import restaurant.application.ReservationController;
 import restaurant.application.ReservationFactory;
 import restaurant.application.ReservationRepository;
 import restaurant.infrastructure.FileReservationRepository;
 import restaurant.infrastructure.NotifyingReservationRepository;
 import restaurant.infrastructure.SmsNotificationService;
-
+//Thin Console UI  - збирає дані від користувача, передає їх у бізнес-логіку та виводить результат.
 import java.util.Scanner;
 public class ConsoleApp {
     public static void main(String[] args) {
@@ -19,7 +18,7 @@ public class ConsoleApp {
         ReservationReceiptFormatter formatter = new ReservationReceiptFormatter();
 
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("=== Бронювання столика в ресторані ===");
+            System.out.println("Бронювання столика в ресторані:");
             System.out.print("Введіть ім'я гостя: ");
             String name = scanner.nextLine();
             System.out.print("Введіть час відвідування (HappyHours/Standard/Evening): ");

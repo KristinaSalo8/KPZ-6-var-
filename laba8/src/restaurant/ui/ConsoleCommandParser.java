@@ -1,5 +1,5 @@
 package restaurant.ui;
-
+//Thin Console UI. Розбиває введені дані на окремі частини.
 import restaurant.application.ReservationRequest;
 public class ConsoleCommandParser {
     public ReservationRequest parse(String guestName, String timeSlot, String guestsCount) {

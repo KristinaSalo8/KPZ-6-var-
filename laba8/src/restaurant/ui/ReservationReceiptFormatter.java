@@ -1,7 +1,7 @@
 package restaurant.ui;
 
 import restaurant.domain.TableReservation;
-
+//Thin Console UI-формує красивий текстовий чек для гостя.
 import java.util.Locale;
 public class ReservationReceiptFormatter {
     public String format(TableReservation r) {
