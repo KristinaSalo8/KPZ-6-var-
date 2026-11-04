@@ -1,4 +1,4 @@
-package task3_builder;
+package task3;
 
 import common.Logger;
 

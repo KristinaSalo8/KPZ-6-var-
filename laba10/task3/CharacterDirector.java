@@ -1,4 +1,4 @@
-package task3_builder;
+package task3;
 
 /** Роль: Director. Типові персонажі формуються однаковою послідовністю кроків в одному місці. */
 public class CharacterDirector {
