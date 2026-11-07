@@ -3,7 +3,7 @@ package task3;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Роль: Builder. Кожен крок - окрема дія, повна перевірка - у build(). */
+// Роль: Builder. Кожен крок - окрема дія, повна перевірка - у build()
 public class CharacterBuilder {
     String nickname, race, characterClass, appearance, biography, uiTheme;
     final List<String> skills = new ArrayList<>();
@@ -22,7 +22,7 @@ public class CharacterBuilder {
 
     public CharacterBuilder uiTheme(String v) { this.uiTheme = v; return this; }
 
-    /** Завершальний крок: перевірка обов'язкових параметрів. */
+    // Завершальний крок: перевірка обов'язкових параметрів
     public Character build() {
         if (nickname == null || nickname.isBlank())
             throw new IllegalStateException("Неможливо створити персонажа: не вказано нікнейм.");

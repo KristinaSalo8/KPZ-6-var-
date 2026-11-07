@@ -1,7 +1,7 @@
 package task1;
 
 import common.Logger;
-
+// Factory Method - шаблон проектування, що дозволяє делегувати створення об'єктів підкласам.
  //Creator. Процес спавну описаний один раз (spawn)
 public abstract class Location {
     private final String name;

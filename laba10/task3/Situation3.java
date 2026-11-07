@@ -7,7 +7,7 @@ public class Situation3 {
     public static void run() {
         // З усіма параметрами вручну
         Character full = new CharacterBuilder()
-                .nickname("Торін").race("Гном").characterClass("Паладин")
+                .nickname("Торін").race("Гном").characterClass("Аладин")
                 .appearance("Руда борода, золоті обладунки")
                 .addSkill("Священний удар").addSkill("Зцілення")
                 .biography("Вигнаний принц гірського королівства")
