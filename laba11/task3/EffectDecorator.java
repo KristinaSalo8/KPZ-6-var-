@@ -1,4 +1,4 @@
-package task3_decorator;
+package task3;
 
 import common.Logger;
 

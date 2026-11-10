@@ -1,4 +1,4 @@
-package task4_proxy;
+package task4;
 
 import common.Logger;
 import java.util.LinkedHashMap;

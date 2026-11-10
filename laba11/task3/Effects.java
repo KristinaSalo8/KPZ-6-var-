@@ -1,4 +1,4 @@
-package task3_decorator;
+package task3;
 
 /** Роль: ConcreteDecorator - ефекти. Новий ефект = новий клас, існуючі не змінюються. */
 public final class Effects {

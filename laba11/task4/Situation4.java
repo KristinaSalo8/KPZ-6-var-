@@ -1,4 +1,4 @@
-package task4_proxy;
+package task4;
 
 /** Ситуація 4: завантаження локацій (Proxy). */
 public class Situation4 {

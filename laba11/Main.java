@@ -1,5 +1,7 @@
 import task1.Situation1;
 import task2.Situation2;
+import task3.Situation3;
+import task4.Situation4;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,9 +9,9 @@ public class Main {
         Situation1.run();
         System.out.println("\nAdapter (стороння платіжна система): ");
         Situation2.run();
-        System.out.println("\nDecorator (ефекти на персонажі)");
+        System.out.println("\nDecorator (ефекти на персонажі): ");
         Situation3.run();
-        System.out.println("\nProxy (завантаження локацій)");
+        System.out.println("\nProxy (завантаження локацій): ");
         Situation4.run();
     }
 }

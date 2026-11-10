@@ -1,4 +1,4 @@
-package task4_proxy;
+package task4;
 
 public class Player {
     final String name;

@@ -1,4 +1,4 @@
-package task3_decorator;
+package task3;
 
 /** Роль: ConcreteComponent - конкретна реалізація персонажа без ефектів. */
 public class BaseCharacter implements GameCharacter {
