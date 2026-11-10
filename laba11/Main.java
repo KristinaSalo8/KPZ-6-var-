@@ -7,5 +7,9 @@ public class Main {
         Situation1.run();
         System.out.println("\nAdapter (стороння платіжна система): ");
         Situation2.run();
+        System.out.println("\nDecorator (ефекти на персонажі)");
+        Situation3.run();
+        System.out.println("\nProxy (завантаження локацій)");
+        Situation4.run();
     }
 }
