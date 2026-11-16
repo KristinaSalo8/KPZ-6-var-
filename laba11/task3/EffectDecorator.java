@@ -3,7 +3,7 @@ package task3;
 import common.Logger;
 
 /** Роль: Decorator. Абстрактний клас, який обгортає будь-якого GameCharacter, 
- * за замовчуванням передаэ всі методи йому все. */
+ * за замовчуванням передає всі методи йому все. */
 public abstract class EffectDecorator implements GameCharacter {
     protected final GameCharacter wrapped;
     private final String effectName;
