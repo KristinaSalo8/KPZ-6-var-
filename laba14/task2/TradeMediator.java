@@ -1,4 +1,4 @@
-package task2_mediator;
+package task2;
 
 /** Mediator: єдиний координуючий об'єкт обміну. */
 public interface TradeMediator {
