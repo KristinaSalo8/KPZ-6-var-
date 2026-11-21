@@ -1,4 +1,4 @@
-package task2_mediator;
+package task2;
 
 import java.util.List;
 
