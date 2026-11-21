@@ -1,4 +1,4 @@
-package task2_mediator;
+package task2;
 
 public class Situation2 {
 
