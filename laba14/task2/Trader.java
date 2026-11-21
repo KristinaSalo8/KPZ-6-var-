@@ -1,4 +1,4 @@
-package task2_mediator;
+package task2;
 
 import common.Logger;
 import java.util.ArrayList;
