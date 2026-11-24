@@ -7,6 +7,7 @@ public class ChaseState implements MonsterState {
     @Override public void update(Monster m, int playerDistance) {
         if (m.isLowHealth()) {
         } else if (playerDistance <= 1) {
+            m.setState(new AttackState());
         } else if (playerDistance > 10) {
             Logger.log(m.getName(), "[Переслідування] Гравець надто далеко (" + playerDistance + ")");
         } else {
