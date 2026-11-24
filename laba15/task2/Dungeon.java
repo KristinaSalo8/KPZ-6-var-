@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class Dungeon {
     /** Template Method: порядок етапів зафіксований (final) і не змінюється в нащадках. */
     public final boolean run(String hero, int heroLevel) {
-        Logger.log(getName(), hero + " (рівень " + heroLevel + ") проходить підземелля ===");
+        Logger.log(getName(), hero + " (рівень " + heroLevel + ") проходить підземелля");
         if (!enter(hero, heroLevel)) return false;
         List<String> rooms = generateRooms();
         placeTraps();
