@@ -11,6 +11,7 @@ public class ChaseState implements MonsterState {
             m.setState(new AttackState());
         } else if (playerDistance > 10) {
             Logger.log(m.getName(), "[Переслідування] Гравець надто далеко (" + playerDistance + ")");
+            m.setState(new ReturnState());
         } else {
             m.moveFromSpawn(2);
             Logger.log(m.getName(), "[Переслідування] Біжить за гравцем, відстань " + playerDistance + ", від спавну " + m.getDistanceFromSpawn());
