@@ -6,6 +6,7 @@ public class AttackState implements MonsterState {
     @Override public String getName() { return "Атака"; }
     @Override public void update(Monster m, int playerDistance) {
         if (m.isLowHealth()) {
+            m.setState(new FleeState());
         } else if (playerDistance > 1) {
             m.setState(new ChaseState());
         } else {
