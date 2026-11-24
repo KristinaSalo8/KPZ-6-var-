@@ -7,6 +7,7 @@ public class PatrolState implements MonsterState {
     @Override public void update(Monster m, int playerDistance) {
         if (playerDistance <= 5) {
             Logger.log(m.getName(), "[Патрулювання] Помітив гравця на відстані " + playerDistance);
+            m.setState(new ChaseState());
         } else {
             Logger.log(m.getName(), "[Патрулювання] Обходить територію, гравець далеко (" + playerDistance + ")");
         }
