@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/** ConcreteMediator: вікно обміну двох гравців. Обмін або виконується повністю, або не виконується. */
+// ConcreteMediator: вікно обміну двох гравців. Обмін або виконується повністю, або не виконується
 public class TradeSession implements TradeMediator {
     private static final String SOURCE = "Координатор обміну";
 

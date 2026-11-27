@@ -4,7 +4,7 @@ import common.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Colleague: гравець-учасник обміну. Звертається лише до посередника, а не до іншого гравця. */
+// Colleague: гравець-учасник обміну. Звертається лише до посередника, а не до іншого гравця
 public class Trader {
     private final String name;
     private final List<String> items = new ArrayList<>();
@@ -21,7 +21,7 @@ public class Trader {
 
     public void setMediator(TradeMediator mediator) { this.mediator = mediator; }
 
-    /* --- дії гравця (йдуть через посередника) --- */
+    //дії гравця (йдуть через посередника)
 
     public void propose(int gold, String... items) {
         Offer offer = new Offer(List.of(items), gold);
@@ -39,7 +39,7 @@ public class Trader {
         mediator.disconnect(this);
     }
 
-    /* --- інвентар (викликає посередник) --- */
+    // інвентар (викликає посередник)
 
     public boolean canGive(Offer o) {
         return items.containsAll(o.getItems()) && gold >= o.getGold();
