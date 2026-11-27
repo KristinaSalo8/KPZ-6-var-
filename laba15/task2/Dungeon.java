@@ -2,9 +2,9 @@ package task2;
 import common.Logger;
 import java.util.List;
 
-/** AbstractClass: Загальна послідовність етапів проходження підземелля. */
+// AbstractClass: Загальна послідовність етапів проходження підземелля
 public abstract class Dungeon {
-    /** Template Method: порядок етапів зафіксований (final) і не змінюється в нащадках. */
+    // Template Method: порядок етапів зафіксований (final) і не змінюється в нащадках
     public final boolean run(String hero, int heroLevel) {
         Logger.log(getName(), hero + " (рівень " + heroLevel + ") проходить підземелля");
         if (!enter(hero, heroLevel)) return false;

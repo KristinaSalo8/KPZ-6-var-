@@ -2,7 +2,7 @@ package task2;
 
 import java.util.List;
 
-/** Пропозиція гравця: предмети й золото. */
+// Пропозиція гравця: предмети й золото
 public class Offer {
     private final List<String> items;
     private final int gold;
